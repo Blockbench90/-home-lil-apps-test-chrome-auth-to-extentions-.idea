@@ -1,0 +1,105 @@
+.homeWrap {
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.rate {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.userWrap {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.userInfo {
+  margin: 8px 0 0 15px;
+}
+
+.userName {
+  font-weight: 700;
+  font-size: 16px;
+}
+.userReview {
+  opacity: 0.6;
+  margin-right: 5px;
+}
+
+.icon {
+  color: #62cdab;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.like {
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+.dislike {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.commentsWrap {
+  height: 340px;
+  overflow: auto;
+}
+
+.commentHeader {
+  display: flex;
+}
+
+.commentAvatar {
+  margin-right: 15px;
+}
+
+.commentNickName {
+  padding-top: 7px;
+}
+
+.commentAuthor {
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.commentContent {
+ font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.commentTime {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.commentFooterInfo {
+  display: flex;
+  opacity: 0.5;
+}
+
+.commentFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  margin-top: 20px;
+  color: red;
+  font-weight: 600;
+}
+
+.editorWrap {
+  position: relative;
+}
+
+.commentSubmitButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

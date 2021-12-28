@@ -7,6 +7,14 @@
   margin: 0 auto;
 }
 
+.mainWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+}
+
 .logo {
   width: 60px;
 }

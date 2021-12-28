@@ -7,7 +7,7 @@ interface APIResponse {
 
 export const UsersApi = {
     async login(postData: LoginValues): Promise<APIResponse> {
-        const {data} = await axios.post<APIResponse>("login", postData);
+        const {data} = await axios.post<APIResponse>("registration", postData);
         return data;
     },
 

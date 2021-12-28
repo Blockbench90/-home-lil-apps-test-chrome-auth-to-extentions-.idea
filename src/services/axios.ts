@@ -2,7 +2,7 @@ import axios from "axios";
 import {WinStorage} from "./AuthSrorage";
 
 axios.interceptors.request.use((config) => {
-    config.baseURL ="http://localhost:3000/dev/"
+    config.baseURL ="http://localhost:4000/dev/"
     const token = window.localStorage.getItem("_token");
     if (token) {
         config.headers["Authorization"] = `Bearer ${token}`;

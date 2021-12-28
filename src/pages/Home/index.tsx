@@ -30,7 +30,7 @@ const Home: React.FC = () => {
             URL: domains?.URL,
             isLike,
             text: editValue,
-            author: userData?.nickName,
+            author: userData?.name,
         };
         dispatch(usersAC.createComment(data));
         setEditValue("")
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
     return (
         <div className={classes.homeWrap}>
 
-            <UserInfo nickName={userData?.nickName}/>
+            <UserInfo nickName={userData?.name} ava={userData?.imageUrl}/>
             <ProgressBar isLike={isLike} percent={percent()} onLike={onLike} onDislike={onDislike}/>
             <Comments comments={domains?.comments}/>
 

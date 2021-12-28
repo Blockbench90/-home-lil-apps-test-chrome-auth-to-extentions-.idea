@@ -5,12 +5,19 @@
 
 .rate {
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  color: #282c34;
+}
+.logout {
+  margin-left: 80px;
 }
 
 .userWrap {
   display: flex;
   margin-bottom: 15px;
+  background: rgba(12, 123, 62, 0.1);
+  border-radius: 7px;
+  padding: 10px;
 }
 
 .userInfo {
@@ -18,8 +25,9 @@
 }
 
 .userName {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #282c34;
 }
 .userReview {
   opacity: 0.6;
@@ -47,6 +55,27 @@
 .commentsWrap {
   height: 340px;
   overflow: auto;
+  background: rgba(12, 123, 62, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.commentsWrap::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.commentsWrap::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #eee;
+  box-shadow: 0 0 1px 1px #bbb, inset 0 0 7px rgba(0,0,0,0.3)
+}
+.commentsWrap::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to left, #96A6BF, #63738C);
+  box-shadow: inset 0 0 1px 1px #5C6670;
+}
+.commentsWrap::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to left, #8391A6, #536175);
 }
 
 .commentHeader {

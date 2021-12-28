@@ -16,9 +16,12 @@ export interface CreateCommentValues {
 
 export interface User {
     id?: string
-    email: string,
-    nickName: string,
-    timestamp: string,
+    email?: string,
+    timestamp?: string,
+    familyName?: string,
+    givenName?: string,
+    imageUrl?: string,
+    name?: string,
 }
 
 export interface Comment {

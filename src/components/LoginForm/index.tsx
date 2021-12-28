@@ -1,55 +1,40 @@
 import React from "react";
-import {useDispatch} from "react-redux";
-import {Button, Checkbox, Form, Input} from "antd";
-
-import {LoginValues} from "../../store/branches/user/stateTypes";
-import {usersAC} from "../../store/branches/user/actionCreators";
 
 import classes from "./LoginForm.module.scss";
+import {useDispatch} from "react-redux";
+import {GoogleLogin} from "react-google-login";
+import {usersAC} from "../../store/branches/user/actionCreators";
+import { refreshTokenSetup } from "../../utils/refreshToken";
+
+const clientId ='180927661131-op5nbqoht3nehj84br6i5srta92e99bk.apps.googleusercontent.com';
+
 
 const LoginForm: React.FC = () => {
     const dispatch = useDispatch();
 
-    const onFinish = (values: LoginValues) => {
-        dispatch(usersAC.login(values));
+    const onSuccess = (res) => {
+        console.log('Login Success: currentUser:', res.profileObj);
+        dispatch(usersAC.login(res.profileObj));
+        refreshTokenSetup(res);
+    };
+
+    const onFailure = (res) => {
+        console.log('Login failed: res:', res);
+        alert(
+            `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
+        );
     };
 
     return (
         <div className={classes.loginWrap}>
-            <Form
-                name="basic"
-                labelCol={{span: 8}}
-                wrapperCol={{span: 16}}
-                initialValues={{remember: true}}
-                onFinish={onFinish}
-                autoComplete="off"
-            >
-                <Form.Item
-                    label="Email"
-                    name="email"
-                    rules={[{required: true, message: "Please input your username!", type: "email"}]}
-                >
-                    <Input/>
-                </Form.Item>
-
-                <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[{required: true, message: "Please input your password!"}]}
-                >
-                    <Input.Password/>
-                </Form.Item>
-
-                <Form.Item name="remember" valuePropName="checked" wrapperCol={{offset: 8, span: 16}}>
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
-                <Form.Item wrapperCol={{offset: 8, span: 16}}>
-                    <Button type="primary" htmlType="submit">
-                        Login
-                    </Button>
-                </Form.Item>
-            </Form>
+            <GoogleLogin
+                clientId={clientId}
+                buttonText="Login"
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={true}
+            />
         </div>
     );
 };
